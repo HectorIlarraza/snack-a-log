@@ -1,0 +1,8 @@
+{
+  "name": "Strawberries",
+  "image": "https://picsum.photos/id/1080/300/300",
+  "fiber": 20,
+  "protein": 10,
+  "added_sugar": 0,
+  "is_healthy": true
+}
