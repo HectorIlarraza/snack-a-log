@@ -48,6 +48,12 @@ function SnackDetails() {
             <div>
                 <button onClick={handleDelete}>Delete</button>
             </div>
+            <div>
+                <Link to={`/snacks/${id}/edit`}>
+                    <button>Edit</button>
+                </Link>
+            </div>
+
         </div>
 
     </article>

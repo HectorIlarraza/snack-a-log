@@ -26,6 +26,11 @@ nav{
     align-items: center;
 }
 
+nav button{
+    border: 1px solid white;
+    color: rgb(235,94,40);
+}
+
 a{
     text-decoration: none;
     color: rgb(235,94,40);

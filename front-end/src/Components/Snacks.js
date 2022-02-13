@@ -24,8 +24,8 @@ function Snacks() {
         <section className="Snack">
             {snacks.map((snack)=>{
                 return(
-                    <h4>
-                        <Link key={snack.id} to={`/snacks/${snack.id}`}>
+                    <h4 key={snack.id}>
+                        <Link to={`/snacks/${snack.id}`}>
                             <Snack  snack={snack}/>
                         </Link>
                     </h4>
