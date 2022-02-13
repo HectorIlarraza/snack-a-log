@@ -20,19 +20,19 @@ function Snacks() {
     },[])
 
   return (
-    <div className="Snacks">
-        <div>
-
-        {snacks.map((snack)=>{
-            return(
-        <Link key={snack.id} to={`/snacks/${snack.id}`}>
-         <Snack  snack={snack}/>
-        </Link>
-             
-         ) 
-        })}
-        </div>
-    </div>
+    <article className="Snacks">
+        <section className="Snack">
+            {snacks.map((snack)=>{
+                return(
+                    <h4>
+                        <Link key={snack.id} to={`/snacks/${snack.id}`}>
+                            <Snack  snack={snack}/>
+                        </Link>
+                    </h4>
+            )  
+            })}
+        </section>
+    </article>
   )
 }
 

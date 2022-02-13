@@ -3,13 +3,15 @@ import HeartHealth from "./HeartHealth"
 
 function Snack({snack}) {
   return (
-    <div>
-        <h6>
-        {snack.name}
-        <img src={snack.image} alt="food" />
-        <HeartHealth snackHealth={snack.is_healthy}/>
-        </h6>
-    </div>
+    <article className="Snacks">
+      <div>
+        <h4>
+          {snack.name}
+          <img src={snack.image} alt={snack.is_healthy ? "healthy food" : "unhealthy food"} />
+          <HeartHealth snackHealth={snack}/>
+        </h4>
+      </div>
+    </article>
   )
 }
 

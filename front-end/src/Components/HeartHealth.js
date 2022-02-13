@@ -3,19 +3,17 @@ import heartOutline from "../assets/heart-regular.png";
 
 const HeartHealth = ({ snackHealth }) => {
 
-    if(snackHealth){
+    if(snackHealth.is_healthy){
       return (
-        <div>
-        <p>healthy food</p>
-        <img src={heartSolid} alt="full heart" />
-        </div>
+          <aside>
+            <img src={heartSolid} alt="healthy food" />
+          </aside>
         )
-    }else if(!snackHealth){
+    }else if(!snackHealth.is_healthy){
       return (
-        <div>
-        <p>unhealthy food</p>
-        <img src={heartOutline} alt="outline of heart" />
-        </div>
+          <aside>
+            <img src={heartOutline} alt="unhealthy food" />
+          </aside>
         )
     }
 }
