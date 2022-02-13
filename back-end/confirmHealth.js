@@ -6,7 +6,7 @@ const confirmHealth = (snack) => {
        return true
     }
 
-    if(snack.fiber >= 5 && snack.added_sugar <5){
+    if(snack.fiber >= 5 && snack.added_sugar < 5){
         return true
     }
 
@@ -16,7 +16,6 @@ const confirmHealth = (snack) => {
   
   
         return false
-
 };
 
 module.exports = confirmHealth;

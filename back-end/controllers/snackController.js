@@ -1,7 +1,8 @@
 const express = require("express");
 const snacks = express.Router();
 const { getAllSnacks, getSnack, createSnack, deleteSnack, updateSnack } = require("../queries/snacks.js");
-const confirmHealth  = require("../confirmHealth.js")
+const confirmHealth = require("../confirmHealth.js")
+const validateSnackName = require("../validateSnackName.js")
 
 snacks.get("/", async (req,res)=>{
     try{
@@ -32,8 +33,9 @@ snacks.get("/:id", async (req,res)=>{
 
 snacks.post("/", async (req,res)=>{
     const { body } = req;
-     body.is_healthy = confirmHealth(body)
-    console.log(body)
+     body.is_healthy = confirmHealth(body);
+     body.name = validateSnackName(body);
+    // console.log(body)
     try{
         const createdSnack = await createSnack(body)
         if(createdSnack.id){
