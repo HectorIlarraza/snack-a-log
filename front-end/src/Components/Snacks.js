@@ -6,34 +6,36 @@ import Snack from "./Snack.js";
 
 const API = process.env.REACT_APP_API_URL;
 
-
 function Snacks() {
-    const [snacks, setSnacks] = useState([])
-    
-    useEffect(()=>{
-        axios.get(`${API}/snacks`)
-        .then((res)=>{
-            setSnacks(res.data.payload)
-        }).catch((err)=>{
-            console.log(err)
-        })
-    },[])
+  const [snacks, setSnacks] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${API}/snacks`)
+      .then((res) => {
+        setSnacks(res.data.payload);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
-    <article className="Snacks">
-        <section className="Snack">
-            {snacks.map((snack)=>{
-                return(
-                    <h4 key={snack.id}>
-                        <Link to={`/snacks/${snack.id}`}>
-                            <Snack  snack={snack}/>
-                        </Link>
-                    </h4>
-            )  
-            })}
-        </section>
-    </article>
-  )
+      <div className="Snacks">
+        <article>
+        {snacks.map((snack) => {
+            return (
+            <div className="Snack" key={snack.id}>
+                <Link to={`/snacks/${snack.id}`}>
+                    <h4>{snack.name}</h4>
+                    <Snack snack={snack} />
+                </Link>
+            </div>
+            );
+        })}
+        </article>
+      </div>
+  );
 }
 
-export default Snacks
+export default Snacks;
