@@ -1,3 +1,0 @@
-# i have grrrrr in my blood....
-# and yerrrrr in my spirit!!!!
-# i hate this part of class
